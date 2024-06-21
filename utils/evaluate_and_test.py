@@ -27,7 +27,7 @@ def evaluate_model(data_loader, model, loss_func, device):
 
 
 def predict(text, entity_1, entity_2, model, tokenizer, device, id2rel):
-    sentence = entity_1 + entity_2 + text
+    sentence = f"实体：{entity_1}，{entity_2} 句子：{text}"
 
     tokenized_input = tokenizer.encode_plus(sentence, padding=True, truncation=True,
                                             max_length=512, return_tensors='pt')

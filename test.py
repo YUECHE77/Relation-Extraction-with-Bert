@@ -26,7 +26,7 @@ if __name__ == '__main__':
     dev_path = 'dataset/dev_data.json'
 
     pretrained_model_name = 'Bert_model/bert-base-chinese'
-    model_path = 'logs/model_relation_extraction.pth'
+    model_path = 'logs/accuracy_93.pth'
     # ----------------------------------------------------#
     #   Get the relation dictionary and list
     # ----------------------------------------------------#

@@ -86,7 +86,7 @@ def load_data(data, rel2id, tokenizer, batch_size=32, mode='Train'):
 
         for datapoint in examples:
             # datapoint is a dictionary -> {rel: ..., 'ent1': ..., 'ent2': ..., 'text': ...}
-            sent = datapoint['ent1'] + datapoint['ent2'] + datapoint['text']
+            sent = f"实体：{datapoint['ent1']}，{datapoint['ent2']} 句子：{datapoint['text']}"
             sentences.append(sent)
 
             labels.append(rel2id[datapoint['rel']])
