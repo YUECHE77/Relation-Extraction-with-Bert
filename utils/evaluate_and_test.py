@@ -39,4 +39,4 @@ def predict(text, entity_1, entity_2, model, tokenizer, device, id2rel):
 
         pred = torch.argmax(output, 1).item()
 
-        print(f'The prediction is {id2rel[pred]}')
+    return id2rel[pred]

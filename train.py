@@ -106,6 +106,10 @@ if __name__ == '__main__':
 
                 print(f'Epoch: {epoch + 1:02d}, Accuracy: {accuracy:.4f}, loss: {avg_loss:.4f}')
 
+                if (epoch + 1) % 5 == 0:
+                    sub_path = f'logs/accuracy_{accuracy}.pth'
+                    torch.save(model.state_dict(), sub_path)
+
     print('\nFinished Training!!!\n')
     # ----------------------------------------------------#
     #   If you want to test the model performance after training

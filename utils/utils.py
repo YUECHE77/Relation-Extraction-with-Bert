@@ -107,6 +107,42 @@ def load_data(data, rel2id, tokenizer, batch_size=32, mode='Train'):
     return dataloader
 
 
+def get_dict(all_data_path, dev_path):
+    """Only used for test.py -> to get the dictionary (rel2id and id2rel)"""
+    relation_set = set()
+
+    def helper_fn(data_path):
+        with open(data_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = json.loads(line.strip())
+
+                spo_list = line.get('spo_list', None)
+                if spo_list is None:
+                    continue
+
+                for relation in spo_list:
+                    predicate = relation.get('predicate', None)
+                    if predicate is None:
+                        continue
+
+                    relation_set.add(predicate)
+
+    helper_fn(all_data_path)
+    helper_fn(dev_path)
+
+    relation_list = list(relation_set)
+    relation_list.sort()
+
+    id2rel = {}
+    rel2id = {}
+
+    for idx, rel in enumerate(relation_list):
+        id2rel[idx] = rel
+        rel2id[rel] = idx
+
+    return id2rel, rel2id, relation_list
+
+
 # -------------------------------------------------------------------------------------------------------------------- #
 # The following functions are not necessarily useful -> I only use them to validate the results while coding
 
