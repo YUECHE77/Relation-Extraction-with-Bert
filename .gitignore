@@ -1,0 +1,5 @@
+dataset/
+Bert_model/
+.idea/
+logs/
+Relation_Extraction.ipynb
