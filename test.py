@@ -12,9 +12,9 @@ if __name__ == '__main__':
     #   sentence: The sentence you want to test
     #   entity_1, entity_2: Which two entities you want to test the relation
     # ----------------------------------------------------#
-    sentence = '我平常喜欢听周杰伦的歌，尤其是他的《稻香》。'
-    entity_1 = '周杰伦'
-    entity_2 = '稻香'
+    sentence = '周佛海被捕入狱之后，其妻杨淑慧散尽家产请蒋介石枪下留人，于是周佛海从死刑变为无期，不过此人或许作恶多端，改判没多久便病逝于监狱，据悉是心脏病发作。'
+    entity_1 = '周佛海'
+    entity_2 = '杨淑慧'
     # ----------------------------------------------------#
     #   data_path:      Path to the large dataset -> training + validation
     #   dev_path:       Path to the test(dev) set
